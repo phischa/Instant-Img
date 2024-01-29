@@ -6,9 +6,14 @@ html {
 body {
     margin: 0px;
     padding: 0;
-    background-color: rgb(230, 230, 230);
+    background-color: rgb(244, 243, 243);
     font-family: "Raleway", "sans-serif";
     overflow-x: hidden;
+}
+
+.all {
+    display: flex;
+    justify-content: space-between;
 }
 
 /* *:focus {
@@ -21,8 +26,9 @@ body {
     width: 100%;
 } */
 
+/* SIDEBAR ON THE LEFT SIDE */
+
 .left-sidebar {
-    position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -41,7 +47,7 @@ body {
 .logo {
     height: 32px;
     width: 104px;
-    padding: 25px 12px 16px;
+    padding: 24px 12px;
     cursor: pointer;
 }
 
@@ -61,6 +67,7 @@ body {
 
 .left-sidebar-top a:hover {
     background-color: rgb(217, 217, 217);
+    border-radius: 8px;
 }
 
 .left-sidebar-bottom {
@@ -80,9 +87,21 @@ body {
 
 .left-sidebar-bottom a:hover {
     background-color: rgb(217, 217, 217);
+    border-radius: 8px;
 }
 
 .left-sidebar-bottom a img {
     height: 24px;
     padding-right: 16px;
+}
+
+/* MAIN CONTAINER AND SUGGESTIONS ON THE RIGHT SIDE */
+
+.main-and-right {
+    display: flex;
+}
+
+.suggestion {
+    display: flex;
+    justify-content: flex-end;
 }
