@@ -99,9 +99,35 @@ body {
 
 .main-and-right {
     display: flex;
+    justify-content: space-evenly;
 }
 
-.suggestion {
+.suggestions {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    width: 300px;
+    padding: 24px;
+    font-size: 14px;
+    gap: 24px;
 }
+
+.suggestions img {
+    height: 24px;
+    display: flex;
+    margin-right: 8px;
+}
+
+.suggestions a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+.suggestions-centered {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
