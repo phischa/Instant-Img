@@ -100,6 +100,7 @@ body {
 .main-and-right {
     display: flex;
     justify-content: space-evenly;
+    padding-top: 22px;
 }
 
 .suggestions {
@@ -107,14 +108,19 @@ body {
     flex-direction: column;
     width: 300px;
     padding: 24px;
+    margin-top: 8px;
     font-size: 14px;
-    gap: 24px;
+    gap: 40px;
 }
 
 .suggestions img {
     height: 24px;
     display: flex;
     margin-right: 8px;
+    border-radius: 150px;
+    background: #e0e0e0;
+    box-shadow: -3px -3px 30px #afafaf,
+            3px 3px 30px #ffffff;    
 }
 
 .suggestions a {
@@ -125,6 +131,21 @@ body {
 }
 
 .suggestions-centered {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.follow {
+    color: #0095F6 !important;
+}
+
+.follow:hover {
+    color: #000000 !important;
+}
+
+.suggestions-centered-2 {
     display: flex;
     flex-direction: row;
     align-items: center;
