@@ -40,7 +40,7 @@ function render() {
     for (let i = 0; i < posts.length; i++) {
         const post = posts[i];
 
-        content.innerHTML += renderHTML(post, i)
+        content.innerHTML += renderHTML(post, i);
         renderComments();
         save();
     }
@@ -56,22 +56,34 @@ function renderHTML(post, i) {
         <img src="${post["img"]}" alt="Image">
         <div>
             <div>
-                <a href=""><img src="" alt=""></a>    
-                <a href="#"></a>
-                <a href="#"></a>
+                <a href="">
+                    <img src="" alt="">
+                </a>    
+                <a href="#">
+                    <img src="" alt="">
+                </a>
+                <a href="#">
+                    <img src="" alt="">
+                </a>
                 <p><b>Gefällt ${post["likes"]} mal</b></p>
                 <p>${post["description"]}<p>
-
             </div>
-            <div></div>
-
+            <div>
+                <div id="commentContent${i}" ></div>
+                <input id="input${i}" type="text">
+            </div>
         </div>
     </div>
     `;
 }
 
 function renderComments(i) {
+    let commentContent = document.getElementById(`commentContent${i}`);
 
+        for (let j = 0; j < posts[i]['comments'].length; j++) {
+            const comment = posts[i]['comments'][j];
+            commentContent.innerHTML += /* HTML */ `<div>${comment}</div>`;
+        }
 }
 
 function addComment(index) {
