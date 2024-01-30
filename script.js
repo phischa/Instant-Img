@@ -1,27 +1,35 @@
 let posts = [
     {
-        'author': 'Tagesschau',
-        'image': 'conent/img1.jpg',
-        
-    }
+        "author": "Tagesschau",
+        "authorImg": "content/img1.jpg",
+        "postImg": "content/img1.jpg",
+        "likes": 8623985623,
+        "liked": false,
+        "description": "BlaBla",
+        "comments": [],
+        "commentAuthor": [],
+    },
     {
-        'author': 'Tagesschau',
-        'image': 'conent/img1.jpg',
-
-    }
+        "author": "Tagesschau",
+        "authorImg": "content/img1.jpg",
+        "postImg": "content/img1.jpg",
+        "likes": 8623985623,
+        "liked": false,
+        "description": "BlaBla",
+        "comments": [],
+        "commentAuthor": [],
+    },
     {
-        'author': 'Tagesschau',
-        'image': 'conent/img1.jpg',
-
+        "author": "Tagesschau",
+        "authorImg": "content/img1.jpg",
+        "postImg": "content/img1.jpg",
+        "likes": 8623985623,
+        "liked": false,
+        "description": "BlaBla",
+        "comments": [],
+        "commentAuthor": [],
     }
 ]
-
-
-let authors = ['tagesschau', 'tagesschau', 'tagesschau'];
-let images = ['content/img1.jpg', 'content/img2.jpg', 'content/img3.jpg', 'content/img4.jpg']
-let headline = []
-
-
 
 function render() {
     let content = document.getElementById('content');
