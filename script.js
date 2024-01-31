@@ -5,7 +5,7 @@ let posts = [
         "img": "content/pic1.jpg",
         "likes": 82,
         "liked": false,
-        "description": "BlaBla",
+        "description": "Wohnbauserie 70 (WBS 70)",
         "comments": [],
         "commentAuthor": [],
     },
@@ -35,7 +35,7 @@ load();
 
 function render() {
     let content = document.getElementById('content');
-    content.innerHTML = '';
+    content.innerHTML += '';
 
     for (let i = 0; i < posts.length; i++) {
         const post = posts[i];
@@ -48,12 +48,12 @@ function render() {
 
 function renderHTML(post, i) {
     return /* HTML */ `
-    <div>
-        <div>
-            <img src="${post["authorImg"]}" alt="Profil Picture">
-            <span>${post["author"]}</span>
+    <div class="card">
+        <div class="author-area">
+            <img class="author-img" src="${post["authorImg"]}" alt="Profil Picture">
+            <span class="author"><b>${post["author"]}</b></span>
         </div>
-        <img src="${post["img"]}" alt="Image">
+        <img class="post-img" src="${post["img"]}" alt="Image">
         <div>
             <div>
                 <a href="">
@@ -70,7 +70,10 @@ function renderHTML(post, i) {
             </div>
             <div>
                 <div id="commentContent${i}" ></div>
-                <input id="input${i}" type="text">
+                <div class="comment-box">
+                    <input class="input-comment" id="input${i}" placeholder="Kommentieren..." type="text">
+                    <button class="button-comment" onclick=""><b>Posten</b></button>
+                </div>
             </div>
         </div>
     </div>
@@ -80,8 +83,8 @@ function renderHTML(post, i) {
 function renderComments(i) {
     let commentContent = document.getElementById(`commentContent${i}`);
 
-        for (let j = 0; j < posts[i]['comments'].length; j++) {
-            const comment = posts[i]['comments'][j];
+        for (let j = 0; j < posts['comments'].length; j++) {
+            const comment = posts['comments'][j];
             commentContent.innerHTML += /* HTML */ `<div>${comment}</div>`;
         }
 }
