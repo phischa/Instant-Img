@@ -135,6 +135,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    font-weight: bold;
 }
 
 .follow {
@@ -179,6 +180,21 @@ body {
     height: 468px;
     width: 468px;
     object-fit: cover;
+}
+
+.like-comment img {
+    height: 24px;
+    padding: 8px 8px 8px 0px;
+    cursor: pointer;  
+}
+
+.like-comment-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bookmark {  
+    padding: 8px 0px 8px 0px !important;
 }
 
 .comment-box {

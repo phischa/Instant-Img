@@ -2,7 +2,7 @@ let posts = [
     {
         "author": "brutal_brutalist",
         "authorImg": "content/pic3.jpg",
-        "img": "content/pic1.jpg",
+        "img": "content/pic4.jpg",
         "likes": 82,
         "liked": false,
         "description": "Wohnbauserie 70 (WBS 70)",
@@ -55,16 +55,18 @@ function renderHTML(post, i) {
         </div>
         <img class="post-img" src="${post["img"]}" alt="Image">
         <div>
-            <div>
-                <a href="">
-                    <img src="" alt="">
-                </a>    
-                <a href="#">
-                    <img src="" alt="">
-                </a>
-                <a href="#">
-                    <img src="" alt="">
-                </a>
+            <div class="like-comment">
+                <div class="like-comment-flex">
+                <div>
+                    <img src="img/heart.png" alt="Like">   
+                    <img src="img/comment.png" alt="Comment">
+                    <img src="img/paper-plane.png" alt="Message">
+                </div>
+                <div>
+                    <img class="bookmark" src="img/bookmark.png" alt="Bookmark">
+                </div>
+                </div>
+
                 <p><b>Gefällt ${post["likes"]} mal</b></p>
                 <p>${post["description"]}<p>
             </div>
