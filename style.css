@@ -171,16 +171,19 @@ body {
     height: 56px;
     width: 56px;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .author {
     font-size: 14px;
+    cursor: pointer;
 }
 
 .post-img {
     height: 468px;
     width: 468px;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .like-comment img {
@@ -247,9 +250,13 @@ body {
     .left-sidebar-bottom a {
         justify-content: center;
     }
+
+    .suggestions {
+        padding: 24px 24px;
+    }
 }
 
-@media(max-width: 1080px) {
+@media(max-width: 1200px) {
 
     .d-none-2 {
         display: none
@@ -283,15 +290,20 @@ body {
         padding: 14px;
     }
 
-    .top-corner {
+    .top-bar {
         background-color: rgb(249, 249, 249);
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
         position: fixed;
         width: 100%;
         height: 64px;
         top: 0px;
         right: 0px;
+        left: 0px;
+    }
+
+    .top-corner {
+        display: flex;
     }
 
     .card {
@@ -314,6 +326,12 @@ body {
         flex-direction: column;
         margin-left: 0px;
         padding: 0px;
+    }
+}
+
+@media(min-width: 701px) {
+    .d-none3 {
+        display: none;
     }
 }
 
