@@ -5,7 +5,7 @@ let posts = [
         "img": "content/pic4.jpg",
         "likes": 82,
         "liked": false,
-        "description": "BlaBlaBla",
+        "description": "#concrete #stairs",
         "comments": [],
         "commentAuthor": [],
     },
@@ -15,7 +15,7 @@ let posts = [
         "img": "content/pic2.jpg",
         "likes": 93,
         "liked": false,
-        "description": "BlaBla",
+        "description": "Alexandra Road. Designed in a brutalist style by Neave Brown.<br> #London",
         "comments": [],
         "commentAuthor": [],
     },
@@ -25,7 +25,7 @@ let posts = [
         "img": "content/fox1.jpg",
         "likes": 165,
         "liked": false,
-        "description": "BlaBla",
+        "description": "Say hello to this little fox!",
         "comments": [],
         "commentAuthor": [],
     }
@@ -33,7 +33,7 @@ let posts = [
 
 load();
 
-/* SAVE AND LOAD */
+/* SAVE AND LOAD >>>>>>>>>>>>>>>>>>>>>>>>>>> */
 function load() {
     let postsAsText = localStorage.getItem("posts");
     if (postsAsText) {
@@ -46,10 +46,10 @@ function save() {
     localStorage.setItem("posts", postsAsText);
   }
 
-/* render */
+/* render >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 function render() {
     let content = document.getElementById('content');
-    content.innerHTML += '';
+    content.innerHTML = '';
 
     for (let i = 0; i < posts.length; i++) {
         const post = posts[i];
@@ -72,7 +72,7 @@ function renderHTML(post, i) {
             <div class="like-comment">
                 <div class="like-comment-flex">
                 <div>
-                    <img src="${heartLiked(i)}" onclick="addLikec(${i})" alt="Like">   
+                    <img src="${heartLiked(i)}" onclick="addLike(${i})" alt="Like">   
                     <img src="img/comment.png" alt="Comment">
                     <img src="img/paper-plane.png" alt="Message">
                 </div>
@@ -96,7 +96,7 @@ function renderHTML(post, i) {
     `;
 }
 
-/* comments */
+/* comments ----------------------------- */
 function renderComments(i) {
     let commentContent = document.getElementById(`commentContent${i}`);
 
@@ -110,20 +110,27 @@ function renderComments(i) {
 function addComment(i) {
     let input = document.getElementById(`inputComment${i}`);
     posts[i]['comments'].push(input.value);
+    render();
+    save();
     input.value = "";
+  }
+
+  /* likes ------------------------------ */ 
+  function addLike(index) {
+    if (posts[index]["liked"]) {
+      posts[index]["likes"]--;
+    } else {
+      posts[index]["likes"]++;
+    }
+    posts[index]["liked"] = !posts[index]["liked"];
     render();
     save();
   }
 
-  /* likes */
-  function addLike(i) {
-
-  }
-
   function heartLiked(i) {
     if (posts[i]["liked"]) {
-      return "/img/heart2.png";
+      return "./img/heart_red.png";
     } else {
-      return "/img/heart1.png";
+      return "./img/heart.png";
     }
   }
