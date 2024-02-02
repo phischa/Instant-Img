@@ -37,14 +37,14 @@ load();
 function load() {
     let postsAsText = localStorage.getItem("posts");
     if (postsAsText) {
-      posts = JSON.parse(postsAsText);
+        posts = JSON.parse(postsAsText);
     }
-  }
+}
 
 function save() {
     let postsAsText = JSON.stringify(posts);
     localStorage.setItem("posts", postsAsText);
-  }
+}
 
 /* render >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 function render() {
@@ -100,11 +100,11 @@ function renderHTML(post, i) {
 function renderComments(i) {
     let commentContent = document.getElementById(`commentContent${i}`);
 
-        for (let j = 0; j < posts[i]["comments"].length; j++) {
-            const comment = posts[i]["comments"][j];
-            commentContent.innerHTML += /* HTML */ `
+    for (let j = 0; j < posts[i]["comments"].length; j++) {
+        const comment = posts[i]["comments"][j];
+        commentContent.innerHTML += /* HTML */ `
             <div>${comment}</div>`;
-        }
+    }
 }
 
 function addComment(i) {
@@ -113,24 +113,24 @@ function addComment(i) {
     render();
     save();
     input.value = "";
-  }
+}
 
-  /* likes ------------------------------ */ 
-  function addLike(index) {
+/* likes ------------------------------ */
+function addLike(index) {
     if (posts[index]["liked"]) {
-      posts[index]["likes"]--;
+        posts[index]["likes"]--;
     } else {
-      posts[index]["likes"]++;
+        posts[index]["likes"]++;
     }
     posts[index]["liked"] = !posts[index]["liked"];
     render();
     save();
-  }
+}
 
-  function heartLiked(i) {
+function heartLiked(i) {
     if (posts[i]["liked"]) {
-      return "./img/heart_red.png";
+        return "./img/heart_red.png";
     } else {
-      return "./img/heart.png";
+        return "./img/heart.png";
     }
-  }
+}
